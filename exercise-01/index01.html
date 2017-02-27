@@ -20,8 +20,9 @@
 
             mesh = new THREE.Mesh(geometry, material);
 
-            mesh.geometry.faces.forEach(function(faces, i) {
-                faces.color.setRGB(100 * i, 100*i, 100*1)
+            mesh.geometry.faces.forEach(function(face, i) {
+                console.log(face.color);
+                face.color.setHex( ffff00 );
             })
 
             scene.add(mesh);
