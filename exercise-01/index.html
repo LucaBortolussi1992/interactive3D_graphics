@@ -11,7 +11,7 @@
             var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000);
             var renderer = new THREE.WebGLRenderer();
             renderer.setSize(window.innerWidth, window.innerHeight);
-            renderer.setClearColor( 0xf0f0f0 );
+            renderer.setClearColor( 0x99CCFF );
             document.body.appendChild(renderer.domElement);
 
             var material, geometry, mesh;
@@ -28,7 +28,7 @@
             geometry.faces.push(new THREE.Face3(5, 4, 7));
             geometry.faces.push(new THREE.Face3(7, 6, 5));
 
-            geometry.faces[ 0 ].color.setHex( 0x00ffff );
+            geometry.faces[ 0 ].color.setHex( 0x99FF33 );
             mesh = new THREE.Mesh(geometry, material);
 
 

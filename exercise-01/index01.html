@@ -11,19 +11,22 @@
             var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000);
             var renderer = new THREE.WebGLRenderer();
             renderer.setSize(window.innerWidth, window.innerHeight);
-            renderer.setClearColor( 0xf0f0f0 );
+            renderer.setClearColor( 0x99CCFF );
             document.body.appendChild(renderer.domElement);
 
             var material, geometry, mesh;
-            material = new THREE.MeshBasicMaterial({color:0xff0000, side:THREE.FrontSide, vertexColors: THREE.FaceColors});
+            material = [
+                new THREE.MeshBasicMaterial({color:'orange', side:THREE.FrontSide}),
+                new THREE.MeshBasicMaterial({color:'green', side:THREE.FrontSide}),
+                new THREE.MeshBasicMaterial({color:'brown', side:THREE.FrontSide}),
+                new THREE.MeshBasicMaterial({color:'yellow', side:THREE.FrontSide}),
+                new THREE.MeshBasicMaterial({color:'black', side:THREE.FrontSide}),
+                new THREE.MeshBasicMaterial({color:'pink', side:THREE.FrontSide})
+            ];
+
             geometry = new THREE.BoxGeometry(1, 1, 1);
 
             mesh = new THREE.Mesh(geometry, material);
-
-            mesh.geometry.faces.forEach(function(face, i) {
-                console.log(face.color);
-                face.color.setHex( ffff00 );
-            })
 
             scene.add(mesh);
 
